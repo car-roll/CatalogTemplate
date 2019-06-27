@@ -4,9 +4,3 @@ multibranch:
       repoOwner: myCompany
       repository: ${repoName}
       credentialsId: my-team-github-credentials
-    buildStrategies:
-      - $class: NamedBranchBuildStrategyImpl
-        filters:
-          - $class: WildcardsNameFilter
-          includes: master
-          excludes: 
