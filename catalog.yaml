@@ -1,7 +1,21 @@
-name: branch source in non-multibranch
+name: complex branch source with params in multibranch
+templateType: MULTIBRANCH
 version: 1
 type: pipeline-template
+parameters:
+  - name: repoOwner
+    type: string
+    defaultValue: banana
+  - name: repository
+    type: string
+    defaultValue: apple
 multibranch:
   branchSource:
     github:
-      repoOwner: alexanderrtaylor
+      repoOwner: ${repoOwner}
+      repository: ${repository}
+      traits:
+        - $class: SSHCheckoutTrait
+          credentialsId: 'bob'
+        - $class: ForkPullRequestDiscoveryTrait
+          strategyId: ${strategyId}
