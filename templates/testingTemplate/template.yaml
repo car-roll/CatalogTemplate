@@ -7,7 +7,7 @@ multibranch:
     github:
       repoOwner: myCompany
       repository: ${repoName}
-      credentialsId: my-team-github-credentials
+      credentialsId:
       buildStrategies:
         - $class: NamedBranchBuildStrategyImpl
           filters:
