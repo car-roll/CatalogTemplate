@@ -1,6 +1,7 @@
+name: branch source in non-multibranch
+version: 1
+type: pipeline-template
 multibranch:
   branchSource:
     github:
-      repoOwner: myCompany
-      repository: ${repoName}
-      credentialsId: my-team-github-credentials
+      repoOwner: alexanderrtaylor
