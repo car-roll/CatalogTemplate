@@ -10,5 +10,5 @@ multibranch:
       buildStrategies:
         $class: NamedBranchBuildStrategyImpl
         filters:
-          $class: WildcardsNameFilter
+          $class: NamedBranchBuildStrategyImpl_-WildcardsNameFilter
             includes: "master"
