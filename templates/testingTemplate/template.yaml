@@ -4,8 +4,6 @@ version: 1
 type: pipeline-template
 multibranch:
   branchSource:
-    github:
-      repoOwner: myCompany
-      repository: SimpleExternalPipeline
-      credentialsId:
-      
+    git:
+      remote: https://github.com/alexanderrtaylor/SimpleExternalPipeline
+      credentialsId: 
