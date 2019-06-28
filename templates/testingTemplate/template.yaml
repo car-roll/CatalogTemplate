@@ -12,4 +12,3 @@ multibranch:
         filters:
           $class: WildcardsNameFilter
             includes: master
-            excludes:
