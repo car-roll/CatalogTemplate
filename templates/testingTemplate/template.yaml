@@ -7,3 +7,9 @@ multibranch:
     git:
       remote: https://github.com/alexanderrtaylor/SimpleExternalPipeline
       credentialsId: 402851d2-28c3-4f45-a740-8f12dd585f14
+      buildStrategies:
+        - $class: NamedBranchBuildStrategyImpl
+        filters:
+          - $class: WildcardsNameFilter
+            includes: master
+            excludes:
