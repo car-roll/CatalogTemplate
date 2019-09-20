@@ -1,14 +1,11 @@
-name: complex branch source with params in multibranch
+name: Complex branch source with params in multibranch
 templateType: MULTIBRANCH
 version: 1
 type: pipeline-template
 multibranch:
   branchSource:
-    git:
-      remote: https://github.com/alexanderrtaylor/SimpleExternalPipeline
-      credentialsId: 402851d2-28c3-4f45-a740-8f12dd585f14
-      buildStrategies:
-        NamedBranchBuildStrategyImpl:
-          filters:
-            NamedBranchBuildStrategyImpl_-WildcardsNameFilter:
-              includes: "master"
+    github:
+      apiUrl: https://github.thehartford.com/api/v3
+      repoOwner: qh89268
+      repository: jenkins_agent_role
+      credentialsId: q_github_cred
