@@ -5,7 +5,7 @@ type: pipeline-template
 multibranch:
   branchSource:
     github:
-      apiUrl: https://github.thehartford.com/api/v3
+      apiUrl: testServer
       repoOwner: qh89268
       repository: jenkins_agent_role
       credentialsId: q_github_cred
