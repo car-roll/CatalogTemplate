@@ -1,10 +1,16 @@
-name: Complex branch source with params in multibranch
 version: 1
 type: pipeline-template
-multibranch:
-  branchSource:
-    github:
-      apiUri: testServer
-      repoOwner: qh89268
-      repository: jenkins_agent_role
-      credentialsId: q_github_cred
+
+name: Java Maven App Pipeline Job
+description: Simple Java App With Maven
+parameters:
+  - name: emailRecipient
+    type: string
+    displayName: Email address to be used for sending build notifications
+  - name: github_repo
+    type: string
+    displayName: GitHub HTTPS repo endpoint
+  - name: github_creds
+    displayName: GitHub Credentials ID
+    type: credentials
+    defaultValue: github-creds-example
