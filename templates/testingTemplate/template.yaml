@@ -1,5 +1,4 @@
 name: Complex branch source with params in multibranch
-templateType: MULTIBRANCH
 version: 1
 type: pipeline-template
 multibranch:
