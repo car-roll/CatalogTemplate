@@ -2,6 +2,6 @@ version: 1
 type: pipeline-template
 name: A template with a single parameter
 parameters:
-  - name: aParam
-    type: string
+  - name: testVar
+    type: boolean
     displayName: An individual parameter
