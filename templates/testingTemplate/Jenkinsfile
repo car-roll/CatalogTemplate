@@ -1,4 +1,17 @@
-properties([[$class: 'JiraProjectProperty', siteName: 'https://testsitejavi.atlassian.net/'], [$class: 'DatadogJobProperty', tagFile: '', tagProperties: ''], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobRestrictionProperty'], pipelineTriggers([cron('* * * * *')])])
-node(){
-  echo "hello"
+pipeline {
+    agent "master"
+    stages {
+        stage('Build') { 
+            steps {
+              script{
+                if(testVar == false){
+                  properties([[$class: 'JiraProjectProperty', siteName: 'https://testsitejavi.atlassian.net/'], [$class: 'DatadogJobProperty', tagFile: '', tagProperties: ''], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobRestrictionProperty'], pipelineTriggers([cron('* * * * *')])])
+                }
+                else{
+                  properties([[$class: 'JiraProjectProperty', siteName: 'https://testsitejavi.atlassian.net/'], [$class: 'DatadogJobProperty', tagFile: '', tagProperties: ''], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobRestrictionProperty'], pipelineTriggers([cron('')])])
+                }
+              }
+            }
+        }
+    }
 }
