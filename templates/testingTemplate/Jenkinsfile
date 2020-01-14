@@ -1,10 +1,17 @@
 pipeline {
     agent {label "master"}
     stages {
+        stage('initial') { 
+            steps {
+              script{
+                  echo "hello1"
+              }
+            }
+        }
         stage('Build') { 
             steps {
               script{
-                  echo "hello"
+                  echo "hello2"
                   checkpoint 'TEST'
               }
             }
@@ -12,7 +19,7 @@ pipeline {
         stage('Post'){
             steps{
                 script{
-                    echo "hello2"
+                    echo "hello3"
                 }
             }
         }
