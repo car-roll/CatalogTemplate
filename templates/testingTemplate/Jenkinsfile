@@ -1,26 +1,16 @@
 pipeline {
     agent {label "master"}
     stages {
-        stage('initial') { 
-            steps {
-              script{
-                  echo "hello1"
-              }
-            }
-        }
         stage('Build') { 
             steps {
               script{
-                  echo "hello2"
-                  checkpoint 'TEST'
-              }
-            }
-        }
-        stage('Post'){
-            steps{
-                script{
-                    echo "hello3"
+                if(testVar == false){
+                  properties([[$class: 'JiraProjectProperty', siteName: 'https://testsitejavi.atlassian.net/'], [$class: 'DatadogJobProperty', tagFile: '', tagProperties: ''], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobRestrictionProperty'], pipelineTriggers([cron('* * * * *')])])
                 }
+                else{
+                  properties([[$class: 'JiraProjectProperty', siteName: 'https://testsitejavi.atlassian.net/'], [$class: 'DatadogJobProperty', tagFile: '', tagProperties: ''], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobRestrictionProperty'], pipelineTriggers([cron('')])])
+                }
+              }
             }
         }
     }
