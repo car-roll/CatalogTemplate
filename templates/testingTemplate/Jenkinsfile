@@ -1,17 +1,4 @@
-pipeline {
-    agent {label "master"}
-    stages {
-        stage('Build') { 
-            steps {
-              script{
-                if(testVar == false){
-                  properties([pipelineTriggers([cron('* * * * *')])])
-                }
-                else{
-                  properties([pipelineTriggers([cron('')])])
-                }
-              }
-            }
-        }
-    }
+node {
+    properties([disableConcurrentBuilds()])
+    echo "testVar is ${testVar}"
 }
