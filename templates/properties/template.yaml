@@ -5,7 +5,3 @@ templateType: MULTIBRANCH
 parameters:
   - name: repoUrl
     displayName: Repo
-multibranch:
-  branchSource:
-    git:
-      remote: ${repoUrl}
