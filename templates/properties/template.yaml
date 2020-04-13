@@ -1,7 +1,6 @@
 version: 1
 type: pipeline-template
 name: Multibranch With Properties Step
-templateType: MULTIBRANCH
 parameters:
   - name: repoUrl
     displayName: Repo
