@@ -1,0 +1,4 @@
+node {
+    properties([disableConcurrentBuilds()])
+    echo "repo url is ${repoUrl}"
+}
