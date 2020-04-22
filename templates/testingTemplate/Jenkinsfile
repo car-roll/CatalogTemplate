@@ -1,4 +1,4 @@
 node {
-    properties([disableConcurrentBuilds()])
+    //properties([disableConcurrentBuilds()])
     echo "testVar is ${testVar}"
 }
