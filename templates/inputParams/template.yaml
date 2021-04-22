@@ -1,6 +1,6 @@
 version: 1
 type: pipeline-template
-name: A basic template
+name: A template with input parameters
 parameters:
   - name: myparam_one
     displayName: Who should I say hello to?
